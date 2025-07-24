@@ -6,7 +6,8 @@
 **to install, delete your nvim folder and then run this command:**
 
 ```bassh
-git clone https://github.com/sijanthapa171/nvim.git %USERPROFILE%\appdata\local\nvim
+git clone https://github.com/sijanthapa171/nvim.git 
+%USERPROFILE%\appdata\local\nvim
 ```
 
 **change the output path as needed. It will most likely be different on macos and linux.**
