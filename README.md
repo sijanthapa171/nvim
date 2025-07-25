@@ -7,8 +7,7 @@
 
 **To install on windows, open command promp and then run the command below**
 ```bat
-rmdir /S /Q %homepath%\appdata\local\nvim &&
-git clone https://github.com/sijanthapa171/nvim.git %homepath%\appdata\local\nvim
+mkdir %homepath%\appdata\local\nvim & rmdir /S /Q %homepath%\appdata\local\nvim && git clone https://github.com/sijanthapa171/nvim.git %homepath%\appdata\local\nvim
 ```
 **Change the output path as needed. It will most likely be different on macos and linux.**
 **also if you are using a terminal with neovim such as powershell, command prompt or any other terminal emulator, then download a nerd font.**
