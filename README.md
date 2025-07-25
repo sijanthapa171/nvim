@@ -5,9 +5,10 @@
 <img src="images/neovim1.png" width=800>
 <img src="images/neovim2.png" width=800>
 
-**To install on windows, delete your nvim folder in %USERPROFILE%\appdata\local\ if you have one there. Then run:**
-```shell 
-git clone https://github.com/sijanthapa171/nvim.git "%USERPROFILE%\appdata\local\nvim"
+**To install on windows, run the command below**
+```shell
+rmdir /S /Q $env:homepath\appdata\local\nvim &&
+git clone https://github.com/sijanthapa171/nvim.git $env:homepath\appdata\local\nvim
 ```
 **Change the output path as needed. It will most likely be different on macos and linux.**
 **also if you are using a terminal with neovim such as powershell, command prompt or any other terminal emulator, then download a nerd font.**
