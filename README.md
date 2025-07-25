@@ -6,7 +6,7 @@
 <img src="images/neovim2.png" width=800>
 
 **To install on windows, run the command below**
-```shell
+```powershell
 rmdir /S /Q $env:homepath\appdata\local\nvim &&
 git clone https://github.com/sijanthapa171/nvim.git $env:homepath\appdata\local\nvim
 ```
