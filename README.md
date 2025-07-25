@@ -6,7 +6,7 @@
 <img src="images/neovim2.png" width=800>
 
 **To install on windows, open command promp and then run the command below**
-```dos
+```bat
 rmdir /S /Q %homepath%\appdata\local\nvim &&
 git clone https://github.com/sijanthapa171/nvim.git %homepath%\appdata\local\nvim
 ```
