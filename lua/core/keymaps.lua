@@ -6,27 +6,39 @@
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- old window mappings: keymap('n', '<c-j>', ':wincmd j<CR><CMD>startinsert<CR>')
+-- old window mappings: keymap('n', '<c-k>', ':wincmd k<CR>')
+-- old window mappings: keymap('n', '<c-l>', ':wincmd l<CR>')
+-- old window mappings: keymap('n', '<c-h>', ':wincmd h<CR>')
+
 local keymap = vim.keymap.set
-
-keymap('n', '<leader>h', ':nohlsearch<CR>')
-keymap('n', '<c-j>', ':wincmd j<CR><CMD>startinsert<CR>')
-keymap('n', '<c-k>', ':wincmd k<CR>')
-keymap('n', '<c-l>', ':wincmd l<CR>')
-keymap('n', '<c-h>', ':wincmd h<CR>')
-
-
-
--- testing these keymaps:
 
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
+-- Fterm
+keymap('n', '<M-f>', '<CMD>lua require("FTerm").toggle()<CR>')
+keymap('t', '<M-f>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+-- Cargo hotkeys
+keymap('n', '<M-F2>', '<CMD>CargoBuildDebug<CR>')
+keymap('n', '<M-F3>', '<CMD>CargoBuildRelease<CR>')
+keymap('n', '<M-F4>', '<CMD>CargoRunDebug<CR>')
+keymap('n', '<M-F5>', '<CMD>CargoRunRelease<CR>')
+
+-- Telescope
+keymap('n', '<leader>fb', '<CMD>Telescope buffers<CR>')
+keymap('n', '<leader>ff', '<CMD>Telescope find_files<CR>')
+
+---------------------------------------------------------
+
 -- Normal --
 -- Better window navigation
---keymap("n", "<C-h>", "<C-w>h", opts)
---keymap("n", "<C-j>", "<C-w>j", opts)
---keymap("n", "<C-k>", "<C-w>k", opts)
---keymap("n", "<C-l>", "<C-w>l", opts)
+keymap('n', '<leader>h', ':nohlsearch<CR>')
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j<CMD>startinsert<CR>", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -64,17 +76,7 @@ keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
--- Fterm
-vim.keymap.set('n', '<M-f>', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<M-f>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
-
--- Cargo hotkeys
-vim.keymap.set('n', '<M-F2>', '<CMD>CargoBuildDebug<CR>')
-vim.keymap.set('n', '<M-F3>', '<CMD>CargoBuildRelease<CR>')
-vim.keymap.set('n', '<M-F4>', '<CMD>CargoRunDebug<CR>')
-vim.keymap.set('n', '<M-F5>', '<CMD>CargoRunRelease<CR>')
-
--- Terminal (still testing)
+-- Terminal (horizontal)
 --keymap("t", "<C-h>", "<C-\\><C-N><C-w>t", term_opts)
 --keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 --keymap("t", "<C-l>", "<C-\\><C-N><C-w>k", term_opts)

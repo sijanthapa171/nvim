@@ -14,17 +14,23 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
   -- 'user/repo'
   -- Themes
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  'folke/tokyonight.nvim',
-  'Mofiqul/vscode.nvim',
-  'navarasu/onedark.nvim',
-  'ellisonleao/gruvbox.nvim',
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000, lazy =false },
+  { 'folke/tokyonight.nvim', lazy = true },
+  { 'Mofiqul/vscode.nvim', lazy = true },
+  { 'navarasu/onedark.nvim', lazy = true },
+  { 'ellisonleao/gruvbox.nvim', lazy = true },
 
   -- General
   {
-  'nvim-telescope/telescope.nvim',
-  tag = '0.1.2',
-  dependencies = { {'nvim-lua/plenary.nvim'} }
+    'goolord/alpha-nvim',
+    event = "VimEnter",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    cmd = "Telescope",
+    tag = '0.1.2',
+    dependencies = { {'nvim-lua/plenary.nvim'} }
   },
   {
     "windwp/nvim-autopairs",
@@ -45,32 +51,8 @@ local plugins = {
       },
     },
   },
-  {
-    "akinsho/bufferline.nvim",
-    lazy = true;
-    version = "*",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-      enabled = vim.g.icons_enabled,
-      opts = {
-        override = {
-          deb = { icon = "", name = "Deb" },
-          lock = { icon = "󰌾", name = "Lock" },
-          mp3 = { icon = "󰎆", name = "Mp3" },
-          mp4 = { icon = "", name = "Mp4" },
-          out = { icon = "", name = "Out" },
-          ["robots.txt"] = { icon = "󰚩", name = "Robots" },
-          ttf = { icon = "", name = "TrueTypeFont" },
-          rpm = { icon = "", name = "Rpm" },
-          woff = { icon = "", name = "WebOpenFontFormat" },
-          woff2 = { icon = "", name = "WebOpenFontFormat2" },
-          xz = { icon = "", name = "Xz" },
-          zip = { icon = "", name = "Zip" },
-        },
-      },
-    },
-  },
   { "max397574/better-escape.nvim", event = "InsertCharPre", opts = { timeout = 300 } },
+  {'akinsho/bufferline.nvim', version = "*", lazy = true, dependencies = 'nvim-tree/nvim-web-devicons'},
   'folke/neodev.nvim',
   'nmac427/guess-indent.nvim',
   'numToStr/FTerm.nvim',
@@ -125,6 +107,7 @@ local plugins = {
   },
 }
 
-local opts = {defaults = {lazy = true}}
+
+local opts = {defaults = {lazy = true}} -- lazy load all supported plugins by default
 
 require("lazy").setup(plugins, opts)

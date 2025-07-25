@@ -12,7 +12,6 @@ vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
-
 vim.cmd [[ set noswapfile ]]
 
 --change core/plugin-config/lualine.lua theme after selecting one of the themes below.

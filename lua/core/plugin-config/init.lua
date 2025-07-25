@@ -1,3 +1,4 @@
+require("core.plugin-config.alpha")
 require("core.plugin-config.mason")
 require("core.plugin-config.languages")
 require("core.plugin-config.lsp-config")
