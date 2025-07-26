@@ -5,15 +5,18 @@
 <img src="images/neovim1.png" width=800>
 <img src="images/neovim2.png" width=800>
 
-**To install on windows, open command promp and then run the command below**
-```bat
-mkdir %homepath%\appdata\local\nvim & rmdir /S /Q %homepath%\appdata\local\nvim && git clone https://github.com/sijanthapa171/nvim.git %homepath%\appdata\local\nvim
-```
-**Change the output path as needed. It will most likely be different on macos and linux.**
-**also if you are using a terminal with neovim such as powershell, command prompt or any other terminal emulator, then download a nerd font.**
+**Before installing, A nerd font is required to see all the icons inside neovim.**
+**the nerd font that I recommend is [JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip)**
 
-**A nerd font is required to see all the symbols that neovim uses.**
-**the nerd font that I recommend is JetBrainsMono nerd font https://www.jetbrains.com/lp/mono/**
+**To install on windows, open command prompt and then run the command below**
+```bat
+mkdir %homepath%\appdata\local\nvim & rmdir /S /Q %homepath%\appdata\local\nvim && git clone https://github.com/sijathapa71/nvim.git %homepath%\appdata\local\nvim
+```
+
+**To install on Linux/Mac, open terminal and then run the command below**
+```command
+rm -rf ~/.config/nvim && git clone https://github.com/sijanthapa171/nvim.git ~/.config/nvim
+```
 
 **All Keymaps can be found in lua\core\keymaps.lua**
 
