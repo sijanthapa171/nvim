@@ -41,14 +41,14 @@ end
 
 
 
--- Delete the definition below to use the default Neovim ascii art or define your own.
-dashboard.section.header.val = {
-[[  _                 ]],
-[[ | |   _   ___   __ ]],
-[[ | |  | | | \ \ / / ]],
-[[ | |__| |_| |\ V /  ]],
-[[ |_____\__,_| \_/   ]],
-[[                    ]],   
-}
+-- define startup ascii art here.
+--dashboard.section.header.val = {
+-- [[  _                 ]],
+-- [[ | |   _   ___   __ ]],
+-- [[ | |  | | | \ \ / / ]],
+-- [[ | |__| |_| |\ V /  ]],
+-- [[ |_____\__,_| \_/   ]],
+-- [[                    ]],  
+--}
 
 alpha.setup(dashboard.opts)
